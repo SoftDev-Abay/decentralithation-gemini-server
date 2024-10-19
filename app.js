@@ -9,8 +9,8 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const app = express();
 
-// Use CORS middleware to allow requests from http://localhost:8081
-app.use(cors({ origin: "http://localhost:8081" }));
+// Use CORS middleware to allow requests from any origin
+app.use(cors()); // or app.use(cors({ origin: '*' }));
 
 // Function to process the user's message
 async function processMessage(message) {
